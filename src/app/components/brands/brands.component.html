@@ -1,0 +1,21 @@
+
+
+
+<app-loader *ngIf="isloading"></app-loader>
+<div class="row gy-5 mb-5 mt-1">
+    <div *ngFor="let brand of branList" class="col-md-2">
+        <div class="product p-2">
+            <img [src]="brand.image" class="w-100" [alt]="brand.name">
+            <p class="text-main fw-bolder text-center">{{brand.name}}</p>
+        </div>
+    </div>
+</div>
+
+<nav aria-label="Page navigation example text-main" class="d-flex justify-content-center">
+    <ul class="pagination cursor-pointer">
+      <li class="page-item" (click)="getPrevpage()"><a class="page-link" >Previous</a></li>
+      <li [ngClass]="{'page-item bg-main active':activepage1}" (click)="getPrevpage()"><a class="page-link">1</a></li>
+      <li [ngClass]="{'page-item bg-main active':!activepage1}" (click)="getNextpage()"><a class="page-link"  >2</a></li>
+      <li class="page-item" (click)="getNextpage()"><a class="page-link" >Next</a></li>
+    </ul>
+  </nav>

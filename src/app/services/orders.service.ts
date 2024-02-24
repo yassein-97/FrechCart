@@ -13,7 +13,7 @@ export class OrdersService {
 
   checkOut(cartId:string,shippingAddress:OrderDtails):Observable <any>
   {
-    return this._HttpClient.post(`${this.baseUrl}/api/v1/orders/checkout-session/${cartId}?url=https://yassein-97.github.io/FrechCart/#`,
+    return this._HttpClient.post(`${this.baseUrl}/api/v1/orders/checkout-session/${cartId}?url=https://yassein-97.github.io/FrechCart`,
     {shippingAddress:shippingAddress});
   }
 
